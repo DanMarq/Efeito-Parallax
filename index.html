@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="theme-color" content="#2b1055">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Parallax Scrolling</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">Logo</a>
+            <ul class="menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="imgs/estrelas.png" id="estrelas" alt="Estrelas no Céu">
+            <img src="imgs/lua.png" id="lua" alt="Lua Cheia">
+            <img src="imgs/montanha-fundo.png" id="montanhas-fundo" alt="Montanhas por trás de Montanhas">
+            <h2 id="text">Texto Passando</h2>
+            <a href="#sec" id="btn">Explorar</a>
+            <img src="imgs/montanha-frente.png" id="montanhas-frente" alt="Montanhas">
+        </section>
+        <div class="sec" id="sec">
+            <h2>Parallax Scrolling Effect</h2>
+            <p>
+                Suba e desça a pagina utilizando o scroll para notar o efeito parallax nas montanhas, lua e nas estrelas. Faça isso principalmente na parte de cima dessa página. E o melhor, funciona tanto no desktop, quanto mobile. Faça isso novamente, desça e suba a página para ver a mágica kkkkk.
+                <br> Sim, eu sei! É viciante.
+                <br>
+                <br>
+                Tudo isso está acontecendo na sua tela com codigos HTML, CSS e um pouco de Javascript! Interessante, não? Bom, a parte de cima são imagens separadas em elementos, mas ainda assim é bonito de ver!
+                <br>
+                <br>
+                Bom, mas pra que serve tudo isso? Então, digamos que isso é apenas visual, serve para deixar aquela página do site ou uma landing page um pouco mais atraente. Serveria também para exibir um produto seu em destaque. Imagine só aquele seu produto expecioanal que você precisaria vender e queria deixar ele animado sem nem precisar ser um video e só com a intereação do scroll do usuario!
+                <br>
+                <br>
+                
+            </p>
+        </div>
+
+        <script>
+            let stars = document.getElementById('estrelas');
+            let moon = document.getElementById('lua');
+            let mountains_behind = document.getElementById('montanhas-fundo');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let mountains_front = document.getElementById('montanhas-frente');
+            let header = document.querySelector('header');
+
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                stars.style.left = value * 0.25 + 'px';
+                moon.style.top = value * 1.05 + 'px';
+                mountains_behind.style.top = value * 0.5 + 'px';
+                mountains_front.style.top = value * 0 + 'px';
+                text.style.marginRight = value * 4 + 'px';
+                text.style.marginTop = value * 1.5 + 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                header.style.top = value * 0.5 + 'px';
+            })
+
+        </script>
+    </body>
+</html>
